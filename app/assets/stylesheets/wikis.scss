@@ -1,0 +1,45 @@
+// Place all the styles related to the Wikis controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.header {
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.header .btn {
+  position: absolute;
+  right: 20px;
+  top: 2px;
+}
+
+.header .btn-primary {
+  position: absolute;
+  right: 120px;
+  top: 2px;
+}
+
+.row {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+p {
+  text-align: left;
+  padding-left: 20px;
+}
+
+.form {
+  text-align: left;
+  padding-left: 40px;
+  padding-bottom: 20px;
+}
+
+.form-group {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.body {
+  text-align: center;
+}
