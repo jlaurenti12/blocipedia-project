@@ -1,6 +1,6 @@
 class WelcomeMailer < ApplicationMailer
 
-  default from: 'app82050338@heroku.com'
+  default from: 'jacob@blocipedia.com'
 
   def welcome_send(user)
     @user = user
