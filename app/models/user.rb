@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   private
 
-  after_create :welcome_send
+  after_save :welcome_send
   def welcome_send
     WelcomeMailer.welcome_send(self).deliver
   end
