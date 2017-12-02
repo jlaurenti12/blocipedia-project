@@ -6,13 +6,17 @@ class User < ApplicationRecord
 
   has_many :wikis
 
+  after_initialize { self.role ||= :Standard }
+
+  enum role: [:Standard, :Admin, :Premium]
+
   private
 
   after_save :welcome_send
   def welcome_send
     if self.saved_change_to_confirmed_at?
     WelcomeMailer.welcome_send(self).deliver
-  end
+   end
   end
 
 end

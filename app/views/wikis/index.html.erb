@@ -4,15 +4,15 @@
 </div>
 
 <div class="row">
-      <% @wikis.each do |wiki| %>
-        <div class="col-sm-6 col-md-4">
-          <div class="thumbnail">
-            <div class="caption">
-              <h3> <%= wiki.title %> </h3>
-              <h6> <%= wiki.body %> </h6>
-              <%= link_to "View Full Wiki", wiki %>
-            </div>
-          </div>
+  <% @wikis.each do |wiki| %>
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <div class="caption">
+          <h3> <%= wiki.title %> </h3>
+          <section> <%= truncate(wiki.body, :length => 50) %> </section>
+          <%= link_to "View Full Wiki", wiki %>
         </div>
-          <% end %>
       </div>
+    </div>
+  <% end %>
+</div>
