@@ -18,11 +18,14 @@ end
   # Use sqlite3 as the development database for Active Record
   gem 'sqlite3'
   gem 'web-console', '~> 2.0'
+  # Faker allows the creation of various fake data
+  gem 'faker'
 end
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'rails-controller-testing'
+  gem 'faker'
 end
 
 gem "pundit"
