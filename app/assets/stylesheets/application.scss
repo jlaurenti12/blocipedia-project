@@ -42,8 +42,19 @@
    height: auto;
    margin-bottom: 15px;
    padding: 7px 9px;
+   width: 260px;
  }
+
+
+form {
+  position: relative;
+}
 
 input .btn-btn-primary {
   padding-bottom: 100px;
+}
+
+.field-link {
+  position: absolute;
+  right: 0px;
 }
