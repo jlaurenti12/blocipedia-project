@@ -8,11 +8,7 @@ Rails.application.routes.draw do
 
   resources :charges, only: [:new, :create]
 
-  resources :users do
-    member do
-      post :downgrade
-    end
-  end
+  post "/users/:id/downgrade" => "users#downgrade", as: "downgrade_user"
 
   root 'welcome#index'
 

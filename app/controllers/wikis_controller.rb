@@ -1,5 +1,11 @@
 class WikisController < ApplicationController
 
+  # http://localhost:3000/wiki
+  # /wiki -> router
+  # /wikis -> wikiscontroller#index
+  # /wikis/12 -> wikicontroller#show
+  #
+
 before_action :authenticate_user!, except: [ :index, :show ]
 
 after_action :verify_authorized, except: [ :index, :show ]
@@ -15,7 +21,6 @@ after_action :verify_authorized, except: [ :index, :show ]
   def create
     @wiki = Wiki.new(wiki_params)
     @wiki.user = current_user
-    @wiki.private = params[:wiki][:private]
     authorize @wiki
 
     if @wiki.save

@@ -5,13 +5,14 @@
 
 <div class="row">
   <% @wikis.each do |wiki| %>
-   <% if current_user.role == "Standard" && wiki.private == true %>
+   <% if current_user && (current_user.standard? && wiki.private) %>
    <% else %>
     <div class="col-sm-6 col-md-4">
       <div class="thumbnail">
         <div class="caption">
-          <% if wiki.private == true %>
-            <h3> <%= wiki.title %></h3><span class="private">[Private]</span>
+          <% if wiki.private %>
+            <h3> <%= wiki.title %></h3>
+            <span class="private">[Private]</span>
           <% else %>
             <h3> <%= wiki.title %> </h3>
           <% end %>

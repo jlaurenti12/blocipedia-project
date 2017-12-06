@@ -7,12 +7,7 @@ class UsersController < ApplicationController
 
   def downgrade
     @user = User.find(params[:id])
-
-    @user.wikis.each do |wiki|
-      wiki.update_attribute(:private, false)
-    end
-
-    @user.role = 'Standard'
+    @user.downgrade
 
     if @user.save
       flash[:notice] = "You've been downgraded to standard. Your private wikis are now public."

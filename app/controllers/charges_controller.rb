@@ -15,8 +15,8 @@ class ChargesController < ApplicationController
       currency: 'usd'
     )
 
-    flash[:notice] = "Thanks for all the money, #{current_user.email}! You can now create and edit private wikis."
-    current_user.update_attributes(role: 'Premium')
+    flash[:notice] = "Congratulations #{current_user.username}! You can now create and edit private wikis."
+    current_user.update_attributes(role: 'premium')
     redirect_to root_path # or wherever
 
     # Stripe will send back CardErrors, with friendly messages

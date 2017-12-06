@@ -12,7 +12,7 @@
     <% if user_signed_in? %>
     <ul class="nav navbar-nav navbar-right">
       <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
-      <% if current_user.role == "Standard" %>
+      <% if current_user.standard? %>
         <li><%= link_to "Upgrade to Premium", new_charge_path %></li>
       <% end %>
       <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>

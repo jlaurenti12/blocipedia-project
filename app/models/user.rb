@@ -6,9 +6,16 @@ class User < ApplicationRecord
 
   has_many :wikis
 
-  after_initialize { self.role ||= :Standard }
+  after_initialize { self.role ||= :standard }
 
-  enum role: [:Standard, :Admin, :Premium]
+  enum role: [:standard, :admin, :premium]
+
+  def downgrade
+    self.wikis.each do |wiki|
+      wiki.update_attribute(:private, false)
+    end
+    self.role = "standard"
+  end
 
   private
 
@@ -18,5 +25,6 @@ class User < ApplicationRecord
     WelcomeMailer.welcome_send(self).deliver
    end
   end
+
 
 end
