@@ -1,6 +1,6 @@
 <div class="header">
 <h1>
-  <%= @wiki.title %> <br>
+  <%= markdown(@wiki.title) %>
   <small>
     submitted <%= time_ago_in_words(@wiki.created_at) %> ago by <%= @wiki.user.username %>
   </small>
@@ -11,6 +11,6 @@
 </div>
 
 
-<div>
-    <p class="body"><%= @wiki.body %></p>
+<div class="body">
+    <p><%= markdown(@wiki.body) %></p>
 </div>

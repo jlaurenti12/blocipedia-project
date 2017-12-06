@@ -32,6 +32,8 @@ group :development, :test do
   gem 'faker'
 end
 
+gem 'redcarpet'
+
 gem "pundit"
 
 # Use Puma as the app server

@@ -11,12 +11,12 @@
       <div class="thumbnail">
         <div class="caption">
           <% if wiki.private %>
-            <h3> <%= wiki.title %></h3>
+            <h3> <%= markdown(wiki.title) %></h3>
             <span class="private">[Private]</span>
           <% else %>
-            <h3> <%= wiki.title %> </h3>
+            <h3> <%= markdown(wiki.title) %> </h3>
           <% end %>
-          <section> <%= truncate(wiki.body, :length => 50) %> </section>
+          <section> <%= markdown(truncate(wiki.body, :length => 50)) %> </section>
           <%= link_to "View Full Wiki", wiki %>
         </div>
       </div>

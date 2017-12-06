@@ -7,6 +7,12 @@
   padding-bottom: 20px;
 }
 
+.header p {
+  text-align: center;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
 .header .btn-warning {
   position: absolute;
   left: 20px;
@@ -34,6 +40,14 @@
 .row {
   padding-left: 20px;
   padding-right: 20px;
+}
+
+.row p {
+  padding-left: 0px;
+}
+
+.row h5 {
+  padding-left: 20px;
 }
 
 p {
@@ -71,4 +85,8 @@ section {
   top: 5px;
   right: 5px;
   color: #f0ad4e;
+}
+
+#checkbox {
+  padding-left: 40px;
 }

@@ -2,7 +2,7 @@
 
 <div class="row">
     <div class="col-md-3">
-      <p> Guidelines for Wikis : </p>
+      <h5> Guidelines for Wikis : </h5>
       <ul>
         <li> Ensure your wiki is not a duplicate. </li>
         <li> Proofread! </li>
@@ -22,7 +22,7 @@
       </div>
 
       <% if current_user.premium? || current_user.admin? %>
-        <div class="form-group">
+        <div class="form-group" id="checkbox">
           <%= f.label :private, class: 'checkbox' do %>
             <%= f.check_box :private %> Private wiki
           <% end %>
