@@ -15,6 +15,7 @@ after_action :verify_authorized, except: [ :index, :show ]
   def create
     @wiki = Wiki.new(wiki_params)
     @wiki.user = current_user
+    @wiki.private = params[:wiki][:private]
     authorize @wiki
 
     if @wiki.save

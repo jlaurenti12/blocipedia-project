@@ -57,6 +57,18 @@ section {
 }
 
 .body {
-  text-align: center;
-  padding-left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 750px;
+}
+
+.caption {
+  position: relative;
+}
+
+.private {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: #f0ad4e;
 }
