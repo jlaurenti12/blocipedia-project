@@ -14,3 +14,17 @@
 <div class="body">
     <p><%= markdown(@wiki.body) %></p>
 </div>
+
+
+<% if @wiki.user_id == current_user.id || current_user.admin? %>
+  <% if Collaborator.exists?(wiki_id: @wiki) %>
+  <h4>Collaborators</h4>
+  <ul>
+  	<% @wiki.collaborators.each do |collaborator| %>
+  		<li>
+  			<h4><%= collaborator.user.username %> <%= link_to "", "/wikis/#{@wiki.id}/collaborators/#{collaborator.id}", method: :delete, class: 'glyphicon glyphicon-remove' %> </h4>
+  		</li>
+  	<% end %>
+  </ul>
+  <% end %>
+<% end %>

@@ -21,7 +21,7 @@
           <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter wiki body" %>
       </div>
 
-      <% if current_user.premium? || current_user.admin? %>
+      <% if (current_user.premium? && current_user.id == @wiki.user_id) || current_user.admin? %>
         <div class="form-group" id="checkbox">
           <%= f.label :private, class: 'checkbox' do %>
             <%= f.check_box :private %> Private wiki
@@ -29,10 +29,21 @@
         </div>
       <% end %>
 
+     <% if @wiki.private && (current_user.id == @wiki.user_id || current_user.admin?) %>
+        <div class="form-group">
+          <p>Add Collaborators</p>
+            <%= collection_check_boxes(:wiki, :user_ids, User.all, :id, :username) do |b| %>
+              <%= b.check_box %>
+              <%= b.label %><br />
+            <% end %>
+        </div>
+      <% end %>
+
       <div class="form-group">
       <%= f.submit "Save", class: 'btn btn-success' %>
       <%= link_to "Cancel", wiki_path(@wiki), class: 'btn btn-warning' %>
       </div>
+
       <% end %>
     </div>
 </div>
