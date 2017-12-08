@@ -9,7 +9,7 @@
     <%= f.label :username %><br/> <%= f.text_field :username %><br/>
     <%= f.label :role %>
     <% if current_user.premium? || current_user.admin? %>
-      <%= link_to "Downgrade account", downgrade_user_path(current_user), data: { confirm: "Are you sure you want to downgrade? This will change all of your private wikis to public."}, method: :post, class: 'field-link' %>
+      <%= link_to "Downgrade account", downgrade_user_path(current_user), data: { confirm: "Are you sure you want to downgrade? This will change all of your private wikis to public and remove all collaborators from private wikis."}, method: :post, class: 'field-link' %>
     <% else %>
       <%= link_to "Updgrade account", new_charge_path, class: 'field-link' %>
     <% end %><br/>

@@ -76,6 +76,12 @@ section {
   width: 750px;
 }
 
+.body h3 {
+  padding-left: 18px;
+  padding-bottom: 5px;
+}
+
+
 .caption {
   position: relative;
 }
@@ -85,8 +91,4 @@ section {
   top: 5px;
   right: 5px;
   color: #f0ad4e;
-}
-
-#checkbox {
-  padding-left: 40px;
 }
