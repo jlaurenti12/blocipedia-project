@@ -54,6 +54,6 @@ blocmetrics.report = function(eventName) {
    request.send(JSON.stringify(event));
 };
 
-$('about-link').observe('click', function (event) {
+$('about-link').on('click', function (event) {
   blocmetrics.report('about link clicked');
 });
