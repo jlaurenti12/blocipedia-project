@@ -41,6 +41,7 @@ $(document).ready(function() {
 
 
 var blocmetrics = {};
+
 blocmetrics.report = function(eventName) {
    // #1
    var event = {event: { name: eventName }};
@@ -54,6 +55,6 @@ blocmetrics.report = function(eventName) {
    request.send(JSON.stringify(event));
 };
 
-$('about-link').on('click', function (event) {
+$('#about-link').on('click', function (event) {
   blocmetrics.report('about link clicked');
 });
