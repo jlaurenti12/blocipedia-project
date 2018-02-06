@@ -43,7 +43,7 @@ $(document).ready(function() {
 var blocmetrics = {};
 blocmetrics.report = function(eventName) {
    // #1
-   var event = {event: { name: eventName }}; 
+   var event = {event: { name: eventName }};
    // #2
    var request = new XMLHttpRequest();
    // #3
@@ -52,4 +52,4 @@ blocmetrics.report = function(eventName) {
    request.setRequestHeader('Content-Type', 'application/json');
    // #5
    request.send(JSON.stringify(event));
-}
+};
