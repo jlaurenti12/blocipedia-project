@@ -48,7 +48,7 @@ blocmetrics.report = function(eventName) {
    // #2
    var request = new XMLHttpRequest();
    // #3
-   request.open("POST", "http://blocmetrics-project.herokuapp.com/api/events", true);
+   request.open("POST", "https://blocmetrics-project.herokuapp.com/api/events", true);
    // #4
    request.setRequestHeader('Content-Type', 'application/json');
    // #5
